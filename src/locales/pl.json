@@ -1,15 +1,15 @@
 {
   "RootLayout": {
-    "home_link": "Home",
+    "home_link": "Dom",
     "about_link": "O Nas",
-    "guestbook_link": "Guestbook",
+    "guestbook_link": "Księga gości",
     "portfolio_link": "Portfolio",
-    "hello_link": "Hello",
-    "sign_in_link": "Sign in",
-    "sign_up_link": "Sign up"
+    "hello_link": "Cześć",
+    "sign_in_link": "Logowanie",
+    "sign_up_link": "Rejestracja"
   },
   "BaseTemplate": {
-    "description": "Starter code for your Nextjs Boilerplate with Tailwind CSS!",
+    "description": "Kod startowy dla twojego Boilerplate Nextjs z CSS Tailwind!",
     "made_with": "Made with"
   },
   "Index": {
