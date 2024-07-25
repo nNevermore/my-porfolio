@@ -1,0 +1,2 @@
+[functions]
+  included_files = ["./migrations/meta/_journal.json", "./migrations/meta/0000_snapshot.json", "./migrations/0000_init_db.sql"]

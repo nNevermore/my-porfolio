@@ -1,0 +1,40 @@
+version: '3'
+services:
+  web:
+    build: .
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/usr/src/app
+    # environment:
+      # NODE_ENV: development
+    command: npm run dev
+    stdin_open: true # Otwiera stdin, aby umożliwić interaktywne sesje
+    tty: true # Ustawia tty na true, aby umożliwić interaktywne sesje
+
+# Notes:
+  # "docker.commands.composeUp": [
+  #   {
+  #     "label": "Compose Up",
+  #     "template": "${composeCommand} ${configurationFile} up ${detached}"
+  #     // "template": "${composeCommand} ${configurationFile} up ${detached} ${build}"
+  #   }
+  # ],
+# Access to container console:
+# docker exec -it my-porfolio-web-1 /bin/sh
+
+
+# version: '3.8'
+# services:
+#   app:
+#     image: openai-demo-app
+#     build:
+#       context: ./
+#       target: dev
+#       dockerfile: Dockerfile
+#     volumes:
+#         - .:/app
+#         - /app/node_modules
+#         - /app/.next
+#     ports:
+#       - "3000:3000"
