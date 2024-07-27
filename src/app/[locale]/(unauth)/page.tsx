@@ -1,92 +1,99 @@
-import { getTranslations } from 'next-intl/server';
+import { Manuale } from 'next/font/google';
+import localFont from 'next/font/local';
+import { useTranslations } from 'next-intl';
+import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
 
-import { Sponsors } from '@/components/Sponsors';
+import { AppConfig } from '@/utils/AppConfig';
 
-export async function generateMetadata(props: { params: { locale: string } }) {
+const myFont = localFont({ src: './Butler-Bold.woff' });
+
+const inter = Manuale({
+  subsets: ['latin'],
+  weight: '400',
+});
+
+type IPortfolioDetailProps = {
+  params: { slug: string; locale: string };
+};
+
+export function generateStaticParams() {
+  return AppConfig.locales.map((locale) => ({
+    slug: `Index`,
+    locale,
+  }));
+}
+
+export async function generateMetadata(props: IPortfolioDetailProps) {
   const t = await getTranslations({
     locale: props.params.locale,
     namespace: 'Index',
   });
 
   return {
-    title: t('meta_title'),
-    description: t('meta_description'),
+    title: t('meta_title', { slug: props.params.slug }),
+    description: t('meta_description', { slug: props.params.slug }),
   };
 }
 
-export default function Index() {
+const PortfolioDetail = (props: IPortfolioDetailProps) => {
+  unstable_setRequestLocale(props.params.locale);
+  const t = useTranslations('PortfolioSlug');
+
   return (
-    <>
-      <p>
-        Looking for a SaaS Boilerplate maybe?{' '}
-        <a
-          className="text-blue-700 hover:border-b-2 hover:border-blue-700"
-          href="https://nextjs-boilerplate.com/pro-saas-starter-kit"
-        >
-          Next.js Boilerplate SaaS
-        </a>{' '}
-        can help you build one.
-      </p>
-      <p>
-        Follow{' '}
-        <a
-          className="text-blue-700 hover:border-b-2 hover:border-blue-700"
-          href="https://twitter.com/ixartz"
-          target="_blank"
-        >
-          @Ixartz on Twitter
-        </a>{' '}
-        for updates and more information about the boilerplate.
-      </p>
-      <p>
-        Our sponsors&apos; exceptional support has made this project possible.
-        Their services integrate seamlessly with the boilerplate, and we
-        recommend trying them out.
-      </p>
-      <h2 className="mt-5 text-2xl font-bold">Sponsors</h2>
-      <Sponsors />
-      <h2 className="mt-5 text-2xl font-bold">
-        Boilerplate Code for Your Next.js Project with Tailwind CSS
-      </h2>
-      <p className="text-base">
-        <span role="img" aria-label="rocket">
-          🚀
-        </span>{' '}
-        Next.js Boilerplate is a developer-friendly starter code for Next.js
-        projects, built with Tailwind CSS, and TypeScript.{' '}
-        <span role="img" aria-label="zap">
-          ⚡️
-        </span>{' '}
-        Made with developer experience first: Next.js, TypeScript, ESLint,
-        Prettier, Husky, Lint-Staged, Jest (replaced by Vitest), Testing
-        Library, Commitlint, VSCode, PostCSS, Tailwind CSS, Authentication with{' '}
-        <a
-          className="text-blue-700 hover:border-b-2 hover:border-blue-700"
-          href="https://clerk.com?utm_source=github&amp;utm_medium=sponsorship&amp;utm_campaign=nextjs-boilerplate"
-          target="_blank"
-        >
-          Clerk
-        </a>
-        , Database with DrizzleORM (PostgreSQL, SQLite, and MySQL), Error
-        Monitoring with{' '}
-        <a
-          className="text-blue-700 hover:border-b-2 hover:border-blue-700"
-          href="https://sentry.io/for/nextjs/?utm_source=github&amp;utm_medium=paid-community&amp;utm_campaign=general-fy25q1-nextjs&amp;utm_content=github-banner-nextjsboilerplate-logo"
-          target="_blank"
-        >
-          Sentry
-        </a>
-        , Logging with Pino.js and Log Management with{' '}
-        <a
-          className="text-blue-700 hover:border-b-2 hover:border-blue-700"
-          href="https://betterstack.com/?utm_source=github&amp;utm_medium=sponsorship&amp;utm_campaign=next-js-boilerplate"
-          target="_blank"
-        >
-          Better Stack
-        </a>
-        , Monitoring as Code with Checkly, Storybook, Multi-language (i18n), and
-        more.
-      </p>
-    </>
+    <div>
+      <div className="my-2 flex ">
+        <div className="flex w-1/2 items-center justify-center">
+          Cześć, jestem programistą!
+        </div>
+        <div className="w-1/2 items-center justify-center text-9xl ">
+          <div className={`${myFont.className} text-p-5`}> Bartosz </div>
+          <div className={`${inter.className} -mt-14 text-p-3 `}>Wójtowicz</div>
+          <p />
+        </div>
+      </div>
+      <div className="mt-52">{t('content')}</div>
+    </div>
   );
-}
+};
+
+export const dynamicParams = false;
+
+export default PortfolioDetail;
+
+// import { Manuale } from 'next/font/google';
+// import localFont from 'next/font/local';
+// import { getTranslations } from 'next-intl/server';
+
+// const myFont = localFont({ src: './Butler-Bold.woff' });
+
+// export async function generateMetadata(props: { params: { locale: string } }) {
+//   const t = await getTranslations({
+//     locale: props.params.locale,
+//     namespace: 'Index',
+//   });
+
+//   return {
+//     title: t('meta_title'),
+//     description: t('meta_description'),
+//   };
+// }
+
+// const inter = Manuale({
+//   subsets: ['latin'],
+//   weight: '400',
+// });
+
+// export default function Index() {
+//   return (
+//     <div className="my-2 flex ">
+//       <div className="flex w-1/2 items-center justify-center">
+//         Cześć, jestem programistą!
+//       </div>
+//       <div className="w-1/2 items-center justify-center text-9xl ">
+//         <div className={`${myFont.className} text-p-5`}> Bartosz </div>
+//         <div className={`${inter.className} -mt-14 text-p-3 `}>Wójtowicz</div>
+//         <p />
+//       </div>
+//     </div>
+//   );
+// }
