@@ -1,16 +1,8 @@
-import { Manuale } from 'next/font/google';
-import localFont from 'next/font/local';
 import { useTranslations } from 'next-intl';
 import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
 
+import { Logo } from '@/components/Logo/Main';
 import { AppConfig } from '@/utils/AppConfig';
-
-const myFont = localFont({ src: './Butler-Bold.woff' });
-
-const inter = Manuale({
-  subsets: ['latin'],
-  weight: '400',
-});
 
 type IPortfolioDetailProps = {
   params: { slug: string; locale: string };
@@ -40,18 +32,30 @@ const PortfolioDetail = (props: IPortfolioDetailProps) => {
   const t = useTranslations('PortfolioSlug');
 
   return (
-    <div>
+    <div className="min-h-screen">
       <div className="my-2 flex ">
-        <div className="flex w-1/2 items-center justify-center">
-          Cześć, jestem programistą!
+        <div className="flex w-1/2 items-center justify-center p-9">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
+            aliquam, nisl vel bibendum convallis, augue leo rhoncus nunc, auctor
+            maximus nunc nisl ac nunc. Nam velit nulla, gravida eu efficitur
+            non, cursus sed nibh. Sed euismod, nunc sed eleifend finibus, ante
+            felis malesuada nisl, at gravida nulla est at enim. Nulla facilisi.
+          </p>
         </div>
-        <div className="w-1/2 items-center justify-center text-9xl ">
-          <div className={`${myFont.className} text-p-5`}> Bartosz </div>
-          <div className={`${inter.className} -mt-14 text-p-3 `}>Wójtowicz</div>
-          <p />
+        <div className="flex w-1/2 items-center justify-center p-9 text-9xl  ">
+          <Logo />
         </div>
       </div>
-      <div className="mt-52">{t('content')}</div>
+      <div className="my-2 flex ">
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
+          aliquam, nisl vel bibendum convallis, augue leo rhoncus nunc, auctor
+          maximus nunc nisl ac nunc. Nam velit nulla, gravida eu efficitur non,
+          cursus sed nibh. Sed euismod, nunc sed eleifend finibus, ante felis
+          malesuada nisl, at gravida nulla est at enim. Nulla facilisi.
+        </p>
+      </div>
     </div>
   );
 };
