@@ -1,3 +1,4 @@
+// @ts-nocheck
 /* eslint-disable import/no-extraneous-dependencies, import/extensions */
 import { fileURLToPath } from 'node:url';
 
@@ -24,6 +25,7 @@ export default withSentryConfig(
         dirs: ['.'],
       },
       poweredByHeader: false,
+      trailingSlash: true,
       reactStrictMode: true,
       experimental: {
         serverComponentsExternalPackages: ['@electric-sql/pglite'],

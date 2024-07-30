@@ -1,6 +1,8 @@
-import { useTranslations } from 'next-intl';
+// import { useTranslations } from 'next-intl';
 import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
 
+import { FadeBlock } from '@/components/FadeBlock';
+// import { FadeBlock } from '@/components/FadeBlock';
 import { Logo } from '@/components/Logo/Main';
 import { AppConfig } from '@/utils/AppConfig';
 
@@ -29,7 +31,7 @@ export async function generateMetadata(props: IPortfolioDetailProps) {
 
 const PortfolioDetail = (props: IPortfolioDetailProps) => {
   unstable_setRequestLocale(props.params.locale);
-  const t = useTranslations('PortfolioSlug');
+  // const t = useTranslations('PortfolioSlug');
 
   return (
     <div className="min-h-screen">
@@ -56,6 +58,7 @@ const PortfolioDetail = (props: IPortfolioDetailProps) => {
           malesuada nisl, at gravida nulla est at enim. Nulla facilisi.
         </p>
       </div>
+      <FadeBlock tName="FadeBlock2" direction="left" />
     </div>
   );
 };

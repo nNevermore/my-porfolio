@@ -76,5 +76,23 @@
     "dashboard_link": "Dashboard",
     "user_profile_link": "Manage your account",
     "sign_out": "Sign out"
+  },
+  "FadeBlock1": {
+    "title_left": "Title1",
+    "title_right": "Title1",
+    "content_left": "Content1",
+    "content_right": "Content1"
+  },
+  "FadeBlock2": {
+    "title_left": "Title2",
+    "title_right": "Title2",
+    "content_left": "Content2",
+    "content_right": "Content2"
+  },
+  "FadeBlock3": {
+    "title_left": "Title3",
+    "title_right": "Title3",
+    "content_left": "Content3",
+    "content_right": "Content3"
   }
 }
