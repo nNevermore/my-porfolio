@@ -34,9 +34,24 @@ const PortfolioDetail = (props: IPortfolioDetailProps) => {
   // const t = useTranslations('PortfolioSlug');
 
   return (
-    <div className="min-h-screen">
-      <div className="my-2 flex ">
-        <div className="flex w-1/2 items-center justify-center p-9">
+    <div className="">
+      <div className="h-screen">
+        <div className="my-2 flex ">
+          <div className="flex w-1/2 items-center justify-center p-9">
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
+              aliquam, nisl vel bibendum convallis, augue leo rhoncus nunc,
+              auctor maximus nunc nisl ac nunc. Nam velit nulla, gravida eu
+              efficitur non, cursus sed nibh. Sed euismod, nunc sed eleifend
+              finibus, ante felis malesuada nisl, at gravida nulla est at enim.
+              Nulla facilisi.
+            </p>
+          </div>
+          <div className="flex w-1/2 items-center justify-center p-9 text-9xl  ">
+            <Logo />
+          </div>
+        </div>
+        <div className="my-2 flex ">
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
             aliquam, nisl vel bibendum convallis, augue leo rhoncus nunc, auctor
@@ -45,20 +60,10 @@ const PortfolioDetail = (props: IPortfolioDetailProps) => {
             felis malesuada nisl, at gravida nulla est at enim. Nulla facilisi.
           </p>
         </div>
-        <div className="flex w-1/2 items-center justify-center p-9 text-9xl  ">
-          <Logo />
-        </div>
       </div>
-      <div className="my-2 flex ">
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
-          aliquam, nisl vel bibendum convallis, augue leo rhoncus nunc, auctor
-          maximus nunc nisl ac nunc. Nam velit nulla, gravida eu efficitur non,
-          cursus sed nibh. Sed euismod, nunc sed eleifend finibus, ante felis
-          malesuada nisl, at gravida nulla est at enim. Nulla facilisi.
-        </p>
-      </div>
-      <FadeBlock tName="FadeBlock2" direction="left" />
+      <FadeBlock tName="FadeBlock2" />
+      <FadeBlock tName="FadeBlock1" />
+      <FadeBlock tName="FadeBlock3" />
     </div>
   );
 };

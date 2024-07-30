@@ -17,7 +17,7 @@ const FadeBlock = ({
   const t = useTranslations(tName);
 
   return (
-    <div className="m-2 flex bg-red-500">
+    <div className="m-2 flex h-screen bg-red-500">
       <Fade direction="left" triggerOnce className="block w-1/2 bg-yellow-300">
         <div>
           <h1 className="my-1 text-center text-3xl">{t('title_left')}</h1>
