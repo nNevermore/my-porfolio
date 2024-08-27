@@ -19,18 +19,7 @@ export default function About() {
 
   return (
     <>
-      <p>{t('about_paragraph')}</p>
-
-      <div className="mt-2 text-center text-sm">
-        {`${t('translation_powered_by')} `}
-        <a
-          className="text-blue-700 hover:border-b-2 hover:border-blue-700"
-          href="https://l.crowdin.com/next-js"
-          target="_blank"
-        >
-          Crowdin
-        </a>
-      </div>
+      <div className="mt-2 text-center text-3xl">Test 2</div>
 
       <a href="https://l.crowdin.com/next-js" target="_blank">
         <Image
@@ -41,6 +30,7 @@ export default function About() {
           height={112}
         />
       </a>
+      <p>{t('about_paragraph')}</p>
     </>
   );
 }
