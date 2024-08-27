@@ -13,10 +13,8 @@ const inter = Manuale({
 const Logo = async () => {
   return (
     <div>
-      <div className={`${myFont.className} text-primary-5`}> {FirstName} </div>
-      <div className={`${inter.className} -mt-14 text-primary-3 `}>
-        {LastName}
-      </div>
+      <div className={`${myFont.className} text-p-5`}> {FirstName} </div>
+      <div className={`${inter.className} -mt-14 text-p-3 `}>{LastName}</div>
     </div>
   );
 };

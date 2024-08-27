@@ -1,7 +1,8 @@
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 import { getTranslations } from 'next-intl/server';
-// import { Input } from 'postcss';
+
+import { Button } from '@/components/ui/button';
 
 export async function generateMetadata(props: { params: { locale: string } }) {
   const t = await getTranslations({
@@ -23,8 +24,8 @@ export default function About() {
       <div className="mt-2 text-center text-3xl">
         <div>
           Test
-          {/* <Button>Click me</Button>
-          <Input type="text" placeholder="Enter your name" /> */}
+          <Button>Click me</Button>
+          {/* <Input type="text" placeholder="Enter your name" /> */}
         </div>
       </div>
 
