@@ -22,6 +22,7 @@ export default function About() {
   return (
     <>
       <div className="mt-2 text-center text-3xl">
+        <h1>Boilerplate Code</h1>
         <div>
           Test
           <Button>Click me</Button>

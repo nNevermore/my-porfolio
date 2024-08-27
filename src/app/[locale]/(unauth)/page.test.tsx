@@ -10,10 +10,9 @@ describe('Index page', () => {
     it('should have h1 tag', () => {
       render(
         <NextIntlClientProvider locale="en" messages={messages}>
-          <Index />
+          <Index params={{ slug: 'about', locale: 'en' }} />
         </NextIntlClientProvider>,
       );
-
       const heading = screen.getByRole('heading', {
         name: /Boilerplate Code/,
       });
